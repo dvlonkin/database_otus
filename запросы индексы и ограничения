@@ -1,0 +1,73 @@
+1 Поиск продуктов по категории:
+ - Запрос: SELECT * FROM Products WHERE category_id = ?
+ - Кардинальность: Высокая (множество продуктов в одной категории).
+
+2 Поиск продуктов по поставщику:
+ - Запрос: SELECT * FROM Products WHERE supplier_id = ?
+ - Кардинальность: Высокая (множество продуктов от одного поставщика).
+
+3 Поиск продуктов по производителю:
+ - Запрос: SELECT * FROM Products WHERE manufacturer_id = ?
+ - Кардинальность: Высокая (множество продуктов от одного производителя).
+
+4 Поиск покупок по покупателю:
+ - Запрос: SELECT * FROM Purchases WHERE customer_id = ?
+ - Кардинальность: Высокая (множество покупок одного покупателя).
+
+5 Поиск покупок по продукту:
+ - Запрос: SELECT * FROM Purchases WHERE product_id = ?
+ - Кардинальность: Высокая (множество покупок одного продукта).
+
+6 Отчет о продажах за определенный период:
+ - Запрос: SELECT * FROM Purchases WHERE purchase_date BETWEEN ? AND ?
+ - Кардинальность: Высокая (множество покупок в определенный период).
+
+7 Поиск цен по продукту:
+ - Запрос: SELECT * FROM Prices WHERE product_id = ?
+ - Кардинальность: Высокая (множество цен для одного продукта).
+
+Дополнительные индексы
+
+Индекс на category_id в таблице Products:
+Описание: Ускоряет поиск продуктов по категории.
+SQL: CREATE INDEX idx_products_category_id ON Products(category_id);
+Индекс на supplier_id в таблице Products:
+
+Описание: Ускоряет поиск продуктов по поставщику.
+SQL: CREATE INDEX idx_products_supplier_id ON Products(supplier_id);
+Индекс на manufacturer_id в таблице Products:
+
+Описание: Ускоряет поиск продуктов по производителю.
+SQL: CREATE INDEX idx_products_manufacturer_id ON Products(manufacturer_id);
+Индекс на customer_id в таблице Purchases:
+
+Описание: Ускоряет поиск покупок по покупателю.
+SQL: CREATE INDEX idx_purchases_customer_id ON Purchases(customer_id);
+Индекс на product_id в таблице Purchases:
+
+Описание: Ускоряет поиск покупок по продукту.
+SQL: CREATE INDEX idx_purchases_product_id ON Purchases(product_id);
+Индекс на purchase_date в таблице Purchases:
+
+Описание: Ускоряет поиск покупок за определенный период.
+SQL: CREATE INDEX idx_purchases_purchase_date ON Purchases(purchase_date);
+Индекс на product_id в таблице Prices:
+
+Описание: Ускоряет поиск цен по продукту.
+SQL: CREATE INDEX idx_prices_product_id ON Prices(product_id);
+
+Логические ограничения в БД
+
+Уникальность полей:
+
+product_id в таблице Products должен быть уникальным.
+category_id в таблице Categories должен быть уникальным.
+price_id в таблице Prices должен быть уникальным.
+supplier_id в таблице Suppliers должен быть уникальным.
+manufacturer_id в таблице Manufacturers должен быть уникальным.
+customer_id в таблице Customers должен быть уникальным.
+purchase_id в таблице Purchases должен быть уникальным.
+Ограничения на поля:
+
+quantity в таблице Purchases должен быть положительным числом (нельзя купить отрицательное количество продуктов).
+price в таблице Prices должен быть положительным числом (цена не может быть отрицательной).
