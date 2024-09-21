@@ -41,4 +41,4 @@ postgres=# \l
 (4 rows)
 ```
 ![](https://github.com/dvlonkin/database_otus/blob/dd9587d257ac765b337897ee4a54f3d980e7c655/pg0-1.png)
-![](https://github.com/dvlonkin/database_otus/blob/dd9587d257ac765b337897ee4a54f3d980e7c655/pg0-2.png)
+![](https://github.com/dvlonkin/database_otus/blob/bb8b94670b47a244270685d408a8534d61d52ed5/pg0-2.png)
