@@ -27,3 +27,5 @@ tcp            LISTEN          0               244                      192.168.
  admin     |                                                            | {}        |
  postgres  | Superuser, Create role, Create DB, Replication, Bypass RLS | {}        |
 ```
+![](https://github.com/dvlonkin/database_otus/blob/dd9587d257ac765b337897ee4a54f3d980e7c655/pg0-1.png)
+![](https://github.com/dvlonkin/database_otus/blob/dd9587d257ac765b337897ee4a54f3d980e7c655/pg0-2.png)
