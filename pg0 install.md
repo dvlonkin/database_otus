@@ -27,5 +27,18 @@ tcp            LISTEN          0               244                      192.168.
  admin     |                                                            | {}        |
  postgres  | Superuser, Create role, Create DB, Replication, Bypass RLS | {}        |
 ```
+```
+postgres=# \l
+                                                 List of databases
+   Name    |  Owner   | Encoding |   Collate   |    Ctype    | ICU Locale | Locale Provider |   Access privileges
+-----------+----------+----------+-------------+-------------+------------+-----------------+-----------------------
+ postgres  | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 |            | libc            |
+ store     | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 |            | libc            |
+ template0 | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 |            | libc            | =c/postgres          +
+           |          |          |             |             |            |                 | postgres=CTc/postgres
+ template1 | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 |            | libc            | =c/postgres          +
+           |          |          |             |             |            |                 | postgres=CTc/postgres
+(4 rows)
+```
 ![](https://github.com/dvlonkin/database_otus/blob/dd9587d257ac765b337897ee4a54f3d980e7c655/pg0-1.png)
 ![](https://github.com/dvlonkin/database_otus/blob/dd9587d257ac765b337897ee4a54f3d980e7c655/pg0-2.png)
