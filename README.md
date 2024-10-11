@@ -6,3 +6,4 @@
 [запросы индексы и ограничения](https://github.com/dvlonkin/database_otus/blob/59e2b156240e749a093a2286c225f9f8fa609a1c/%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D1%8B%20%D0%B8%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%D1%8B%20%D0%B8%20%D0%BE%D0%B3%D1%80%D0%B0%D0%BD%D0%B8%D1%87%D0%B5%D0%BD%D0%B8%D1%8F)  
 [pg0 install](https://github.com/dvlonkin/database_otus/blob/68915d409fbbb15a024687fae92d0afdf32fe246/pg0%20install.md)  
 [DDL](https://github.com/dvlonkin/database_otus/blob/6c464107ce198640bc60f5c57ed301252b4e17c0/DDL.md)
+[DML](https://github.com/dvlonkin/database_otus/blob/a25c8dbca530594e3b6e1709d257083449433baa/DML.md)
