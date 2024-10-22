@@ -7,3 +7,4 @@
 [pg0 install](https://github.com/dvlonkin/database_otus/blob/68915d409fbbb15a024687fae92d0afdf32fe246/pg0%20install.md)  
 [DDL](https://github.com/dvlonkin/database_otus/blob/6c464107ce198640bc60f5c57ed301252b4e17c0/DDL.md)  
 [DML](https://github.com/dvlonkin/database_otus/blob/a25c8dbca530594e3b6e1709d257083449433baa/DML.md)
+[indexs](https://github.com/dvlonkin/database_otus/blob/3120dab10279d8c3fba6544dc9e84d1a32a42f86/indexs.md)
