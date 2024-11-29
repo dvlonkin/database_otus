@@ -51,9 +51,6 @@ mysql> SHOW DATABASES;
 | sys                |
 +--------------------+
 
-mysql> CREATE DATABASE intenet_shop;
-Query OK, 1 row affected (0.00 sec)
-
 root@mysql001-otus:/etc/mysql# sysbench /usr/share/sysbench/oltp_read_write.lua --mysql-db=testdb --mysql-user=root --mysql-password=123123 --db-driver=mysql --tables=1 --table-size=1000000 --threads=8 --time=60 run
 sysbench 1.0.20 (using system LuaJIT 2.1.0-beta3)
 
