@@ -28,6 +28,13 @@ mysql> SHOW VARIABLES LIKE 'innodb_buffer_pool_size';
 | innodb_buffer_pool_size | 3221225472 |
 +-------------------------+------------+
 1 row in set (0.00 sec)
+mysql> SHOW VARIABLES LIKE 'datadir';
++---------------+------------------+
+| Variable_name | Value            |
++---------------+------------------+
+| datadir       | /database/mysql/ |
++---------------+------------------+
+1 row in set (0.00 sec)
 
 
 mysql> CREATE DATABASE intenet_shop;
