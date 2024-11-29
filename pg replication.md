@@ -234,6 +234,7 @@ DML=# select *  from statistic ;
 DML=# truncate statistic ;
 TRUNCATE TABLE
 ```
+```
 DML=# select * from statistic ;
  player_name | player_id | year_game | points
 -------------+-----------+-----------+--------
