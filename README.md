@@ -10,3 +10,4 @@
 [indexs](https://github.com/dvlonkin/database_otus/blob/3120dab10279d8c3fba6544dc9e84d1a32a42f86/indexs.md)  
 [DML,CTE](https://github.com/dvlonkin/database_otus/blob/83e52122fd0fff8b761f61a80b55a2b611abdb6a/DML%2CCTE.md)  
 [replication](https://github.com/dvlonkin/database_otus/blob/9e4b8abe28bb081ad4785eb42c360e69a61b57aa/pg%20replication.md)
+[MySQL](https://github.com/dvlonkin/database_otus/blob/fbdfe6d78fe0091b6a195414feeef47459fab441/MySQL.md)  
