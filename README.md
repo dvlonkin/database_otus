@@ -11,3 +11,5 @@
 [DML,CTE](https://github.com/dvlonkin/database_otus/blob/83e52122fd0fff8b761f61a80b55a2b611abdb6a/DML%2CCTE.md)  
 [replication](https://github.com/dvlonkin/database_otus/blob/9e4b8abe28bb081ad4785eb42c360e69a61b57aa/pg%20replication.md)  
 [MySQL](https://github.com/dvlonkin/database_otus/blob/fbdfe6d78fe0091b6a195414feeef47459fab441/MySQL.md)  
+[Типы данных в MySQL](https://github.com/dvlonkin/database_otus/blob/e3fb0d0467b88323b5b6818b23611df6ecf8f33e/%D0%A2%D0%B8%D0%BF%D1%8B%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D0%B2%20MySQL.md)  
+[DML MySQL](https://github.com/dvlonkin/database_otus/blob/e3fb0d0467b88323b5b6818b23611df6ecf8f33e/DML%20MySQL.md)  
