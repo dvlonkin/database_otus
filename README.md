@@ -13,3 +13,4 @@
 [MySQL](https://github.com/dvlonkin/database_otus/blob/fbdfe6d78fe0091b6a195414feeef47459fab441/MySQL.md)  
 [Типы данных в MySQL](https://github.com/dvlonkin/database_otus/blob/e3fb0d0467b88323b5b6818b23611df6ecf8f33e/%D0%A2%D0%B8%D0%BF%D1%8B%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D0%B2%20MySQL.md)  
 [DML MySQL](https://github.com/dvlonkin/database_otus/blob/e3fb0d0467b88323b5b6818b23611df6ecf8f33e/DML%20MySQL.md)  
+[Транзакции, MVCC, ACID в MySQL.md](https://github.com/dvlonkin/database_otus/blob/91438514738eae100faa77d41b155494a3538e31/%D0%A2%D1%80%D0%B0%D0%BD%D0%B7%D0%B0%D0%BA%D1%86%D0%B8%D0%B8%2C%20MVCC%2C%20ACID%20%D0%B2%20MySQL.md)  
