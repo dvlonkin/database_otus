@@ -145,10 +145,9 @@ BEGIN
 END //
 
 DELIMITER ;
-
-6.Права дать пользователю manager на выполнение процедуры
 ```
-GRANT SELECT ON internetshop.* TO 'manager'@'localhost';
+6.Права дать пользователю manager на выполнение процедуры
+```GRANT SELECT ON internetshop.* TO 'manager'@'localhost';
 GRANT EXECUTE ON PROCEDURE internetshop.get_orders TO 'manager'@'localhost';
 mysql -u manager -p
 mysql> CALL get_orders('2025-01-01', '2025-01-31', 'category');
