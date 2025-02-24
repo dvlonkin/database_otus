@@ -168,3 +168,14 @@ muvie> db.movie.find({$and :[{"year" : 2013}, {"genres": "Action"}]})
   }
 ]
 ```
+```
+muvie> db.movie.update({"year" : {$gt: 2000}}, {$set: {"rating": 5.5}}, {multi : true} )
+DeprecationWarning: Collection.update() is deprecated. Use updateOne, updateMany, or bulkWrite.
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 3,
+  modifiedCount: 3,
+  upsertedCount: 0
+}
+```
