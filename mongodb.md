@@ -179,3 +179,4 @@ DeprecationWarning: Collection.update() is deprecated. Use updateOne, updateMany
   upsertedCount: 0
 }
 ```
+![image](https://github.com/dvlonkin/database_otus/blob/10d5e50168a7dc2fd5ef9c479db28836928ec9fc/Screenshot%202025-02-24%20192349.png)
