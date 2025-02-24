@@ -118,3 +118,53 @@ c48e5ef1b11f   mongo           "docker-entrypoint.s…"   7 minutes ago   Up 7 m
 62597499d9b8   mongo-express   "/sbin/tini -- /dock…"   7 minutes ago   Up 7 minutes   0.0.0.0:8081->8081/tcp, [::]:8081->8081/tcp       root-mongo-express-1
 ```
 ![image](https://github.com/dvlonkin/database_otus/blob/c9e07401c2cbbb7b97191ef64db9d58de2271f8b/Screenshot%202025-02-24%20181206.png)
+
+### Загрузка данных и поиск
+```
+db.movie.insert([
+{"_id":11,"title":"Son of the Pink Panther","year":1993,"cast":["Roberto Benigni","Herbert Lom","Claudia Cardinale"],"genres":["Comedy"]},
+{"_id":12,"title":"The Dentist 2","year":1998,"cast":["Corbin Bernsen","Jillian McWhirter"],"genres":["Horror"]}])
+{"_id":13,"title":"Desert Blue","year":1998,"cast":["Brendan Sexton III","Kate Hudson","Casey Affleck","Christina Ricci"],"genres":["Comedy","Drama"]},
+{"_id":14,"title":"Ted","year":2012,"cast":["Mark Wahlberg","Mila Kunis","Seth MacFarlane"],"genres":["Comedy"]},
+{"_id":15,"title":"The Contractor","year":2013,"cast":["Danny Trejo","Brad Rowe","Christina Cox"],"genres":["Action"]},
+{"_id":16,"title":"Need for Speed","year":2014,"cast":["Aaron Paul","Dominic Cooper","Imogen Poots","Kid Cudi"],"genres":["Action"]}])
+```
+```
+muvie> db.movie.find({"genres": "Action"})
+[
+  {
+    _id: 15,
+    title: 'The Contractor',
+    year: 2013,
+    cast: [ 'Danny Trejo', 'Brad Rowe', 'Christina Cox' ],
+    genres: [ 'Action' ]
+  },
+  {
+    _id: 16,
+    title: 'Need for Speed',
+    year: 2014,
+    cast: [ 'Aaron Paul', 'Dominic Cooper', 'Imogen Poots', 'Kid Cudi' ],
+    genres: [ 'Action' ]
+  }
+]
+muvie> db.movie.find({}, {"title" : 1, _id : 0} ).sort({"title": 1})
+[
+  { title: 'Desert Blue' },
+  { title: 'Need for Speed' },
+  { title: 'Son of the Pink Panther' },
+  { title: 'Ted' },
+  { title: 'The Contractor' },
+  { title: 'The Dentist 2' }
+]
+
+muvie> db.movie.find({$and :[{"year" : 2013}, {"genres": "Action"}]})
+[
+  {
+    _id: 15,
+    title: 'The Contractor',
+    year: 2013,
+    cast: [ 'Danny Trejo', 'Brad Rowe', 'Christina Cox' ],
+    genres: [ 'Action' ]
+  }
+]
+```
