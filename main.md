@@ -34,6 +34,22 @@ root@pg0-otus:~# patronictl -c /etc/patroni/config.yml list
 | pg1    | 192.168.88.64 | Leader  | running   |  5 |           | nosync: true |
 +--------+---------------+---------+-----------+----+-----------+--------------+
 ```
+```
+root@pg1-otus:~# sudo -u postgres psql -c "\l"
+could not change directory to "/root": Permission denied
+                                                   List of databases
+     Name     |  Owner   | Encoding |   Collate   |    Ctype    | ICU Locale | Locale Provider |   Access privileges
+--------------+----------+----------+-------------+-------------+------------+-----------------+-----------------------
+ internetshop | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 |            | libc            | =Tc/postgres         +
+              |          |          |             |             |            |                 | postgres=CTc/postgres+
+              |          |          |             |             |            |                 | admin=CTc/postgres
+ postgres     | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 |            | libc            |
+ template0    | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 |            | libc            | =c/postgres          +
+              |          |          |             |             |            |                 | postgres=CTc/postgres
+ template1    | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 |            | libc            | =c/postgres          +
+              |          |          |             |             |            |                 | postgres=CTc/postgres
+(4 rows)
+```
 ### Система резервного копирования
 ```
 root@pg1-otus:~# sudo -u postgres psql -c "SELECT pg_walfile_name(pg_current_wal_lsn());"
