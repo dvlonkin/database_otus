@@ -52,12 +52,33 @@ could not change directory to "/root": Permission denied
 ```
 ### Система резервного копирования
 ```
-root@pg1-otus:~# sudo -u postgres psql -c "SELECT pg_walfile_name(pg_current_wal_lsn());"
-could not change directory to "/root": Permission denied
-     pg_walfile_name
---------------------------
- 000000050000000000000015
-(1 row)
+root@mysql001-otus:~# crontab -l
+# m h  dom mon dow   command
+0 23 * * 0 sudo -u pgbackrest pgbackrest --stanza=ishop --type=full backup
+
+0 23 * * 1-6 sudo -u pgbackrest pgbackrest --stanza=ishop --type=diff backup
+
+root@mysql001-otus:~# cat /etc/pgbackrest.conf
+[global]
+process-max=6
+repo1-path=/pgbackrest
+repo1-retention-full-type=time
+repo1-retention-full=3
+repo1-retention-diff=7
+start-fast=y
+log-level-file=detail
+config-include-path=/etc/pgbackrest/conf.d
+
+[global:archive-push]
+compress-level=3
+
+[ishop]
+pg1-host=192.168.88.65
+pg1-path=/pg_data
+pg1-socket-path=/var/run/postgresql
+pg2-host=192.168.88.64
+pg2-path=/pg_data
+pg2-socket-path=/var/run/postgresql
 
 root@mysql001-otus:~# pgbackrest info
 P00   WARN: configuration file contains command-line only option 'config-include-path'
@@ -87,6 +108,13 @@ stanza: ishop
             database size: 94.1MB, database backup size: 69.3MB
             repo1: backup set size: 5.7MB, backup size: 2.2MB
             backup reference total: 1 full
+
+root@pg1-otus:~# sudo -u postgres psql -c "SELECT pg_walfile_name(pg_current_wal_lsn());"
+could not change directory to "/root": Permission denied
+     pg_walfile_name
+--------------------------
+ 000000050000000000000015
+(1 row)
 ```
 ### Структура БД
 ![image](https://github.com/dvlonkin/database_otus/blob/5c7017cc7672e69dc2e7084c5c492269e878bd3c/%D0%A1%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B0%20%D0%91%D0%94.png)
