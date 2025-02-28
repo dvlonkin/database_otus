@@ -10,7 +10,7 @@
 ### Принципиальная схема
 ![image](project_postgresql.jpg)
 
-Состояние нод etcd и patroni
+### Состояние нод etcd и patroni
 ```
 root@mysql001-otus:~# etcdctl endpoint health --cluster
 http://192.168.88.60:2379 is healthy: successfully committed proposal: took = 1.973148ms
@@ -34,6 +34,43 @@ root@pg0-otus:~# patronictl -c /etc/patroni/config.yml list
 | pg1    | 192.168.88.64 | Leader  | running   |  5 |           | nosync: true |
 +--------+---------------+---------+-----------+----+-----------+--------------+
 ```
+### Система резервного копирования
+```
+root@pg1-otus:~# sudo -u postgres psql -c "SELECT pg_walfile_name(pg_current_wal_lsn());"
+could not change directory to "/root": Permission denied
+     pg_walfile_name
+--------------------------
+ 000000050000000000000015
+(1 row)
 
+root@mysql001-otus:~# pgbackrest info
+P00   WARN: configuration file contains command-line only option 'config-include-path'
+stanza: ishop
+    status: ok
+    cipher: none
+
+    db (current)
+        wal archive min/max (15): 000000020000000000000005/000000050000000000000014
+
+        full backup: 20250227-181552F
+            timestamp start/stop: 2025-02-27 18:15:52+03 / 2025-02-27 18:16:02+03
+            wal start/stop: 00000004000000000000000F / 00000004000000000000000F
+            database size: 30.1MB, database backup size: 30.1MB
+            repo1: backup set size: 4.0MB, backup size: 4.0MB
+
+        diff backup: 20250227-181552F_20250228-115058D
+            timestamp start/stop: 2025-02-28 11:50:58+03 / 2025-02-28 11:51:03+03
+            wal start/stop: 000000050000000000000012 / 000000050000000000000012
+            database size: 94.1MB, database backup size: 69.3MB
+            repo1: backup set size: 5.7MB, backup size: 2.2MB
+            backup reference total: 1 full
+
+        diff backup: 20250227-181552F_20250228-115156D
+            timestamp start/stop: 2025-02-28 11:51:56+03 / 2025-02-28 11:52:02+03
+            wal start/stop: 000000050000000000000014 / 000000050000000000000014
+            database size: 94.1MB, database backup size: 69.3MB
+            repo1: backup set size: 5.7MB, backup size: 2.2MB
+            backup reference total: 1 full
+```
 ### Структура БД
 ![image](https://github.com/dvlonkin/database_otus/blob/5c7017cc7672e69dc2e7084c5c492269e878bd3c/%D0%A1%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B0%20%D0%91%D0%94.png)
