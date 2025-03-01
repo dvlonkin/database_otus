@@ -118,3 +118,47 @@ could not change directory to "/root": Permission denied
 ```
 ### Структура БД
 ![image](https://github.com/dvlonkin/database_otus/blob/5c7017cc7672e69dc2e7084c5c492269e878bd3c/%D0%A1%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B0%20%D0%91%D0%94.png)
+
+### Описание таблиц и полей
+
+#### Продукты (Products)  
+product_id (INT, PRIMARY KEY, AUTO_INCREMENT)  
+name (VARCHAR)  
+description (TEXT)  
+category_id (INT, FOREIGN KEY)  
+supplier_id (INT, FOREIGN KEY)  
+manufacturer_id (INT, FOREIGN KEY)  
+
+##### Категории продуктов (Categories)  
+category_id (INT, PRIMARY KEY, AUTO_INCREMENT)  
+name (VARCHAR)  
+description (TEXT)  
+
+##### Цены (Prices)  
+price_id (INT, PRIMARY KEY, AUTO_INCREMENT)  
+product_id (INT, FOREIGN KEY)  
+price (DECIMAL)  
+currency (VARCHAR)  
+date (DATE)  
+
+##### Поставщики (Suppliers)  
+supplier_id (INT, PRIMARY KEY, AUTO_INCREMENT)  
+name (VARCHAR)  
+contact_info (TEXT)  
+
+##### Производители (Manufacturers)  
+manufacturer_id (INT, PRIMARY KEY, AUTO_INCREMENT)  
+name (VARCHAR)  
+contact_info (TEXT)  
+
+##### Покупатели (Customers)  
+customer_id (INT, PRIMARY KEY, AUTO_INCREMENT)  
+name (VARCHAR)  
+contact_info (TEXT)  
+
+#### Покупки (Purchases)  
+purchase_id (INT, PRIMARY KEY, AUTO_INCREMENT)  
+customer_id (INT, FOREIGN KEY)  
+product_id (INT, FOREIGN KEY)  
+quantity (INT)  
+purchase_date (DATE)  
